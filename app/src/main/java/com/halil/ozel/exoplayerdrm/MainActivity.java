@@ -6,17 +6,18 @@ import android.os.Bundle;
 import android.util.Log;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.media3.common.C;
+import androidx.media3.common.MediaItem;
+import androidx.media3.common.MimeTypes;
+import androidx.media3.common.util.UnstableApi;
+import androidx.media3.datasource.DefaultHttpDataSource;
+import androidx.media3.exoplayer.ExoPlayer;
+import androidx.media3.exoplayer.dash.DashChunkSource;
+import androidx.media3.exoplayer.dash.DashMediaSource;
+import androidx.media3.exoplayer.dash.DefaultDashChunkSource;
+import androidx.media3.exoplayer.source.MediaSource;
+import androidx.media3.exoplayer.upstream.DefaultBandwidthMeter;
 
-import com.google.android.exoplayer2.C;
-import com.google.android.exoplayer2.ExoPlayer;
-import com.google.android.exoplayer2.MediaItem;
-import com.google.android.exoplayer2.source.MediaSource;
-import com.google.android.exoplayer2.source.dash.DashChunkSource;
-import com.google.android.exoplayer2.source.dash.DashMediaSource;
-import com.google.android.exoplayer2.source.dash.DefaultDashChunkSource;
-import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
-import com.google.android.exoplayer2.util.MimeTypes;
 import com.halil.ozel.exoplayerdrm.databinding.ActivityMainBinding;
 
 import java.util.UUID;
@@ -25,6 +26,7 @@ import java.util.UUID;
 /** DRM URL : https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd **/
 /** NON DRM URL : https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd **/
 
+@UnstableApi
 public class MainActivity extends Activity {
 
     private ExoPlayer playerView;
